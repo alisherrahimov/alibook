@@ -1,0 +1,76 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String     @id @default(uuid())
+  username  String?
+  phone     String     @unique
+  image     String?    @default("https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200&d=mm&r=g")
+  active    Boolean?   @default(false)
+  code      Int?
+  interest  Category[]
+  updatedAt DateTime   @updatedAt
+  createdAt DateTime   @default(now())
+  review    Review[]
+  mybooks   Book[]
+}
+
+model Category {
+  id        String   @id @default(uuid())
+  name      String?
+  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
+  book      Book?    @relation(fields: [bookId], references: [id])
+  bookId    String?
+  user      User?    @relation(fields: [userId], references: [id])
+  userId    String?
+}
+
+model Book {
+  id          String     @id @default(uuid())
+  title       String
+  author      String
+  description String
+  book_link   String
+  pdf_size    String
+  page        Int
+  downloads   Int?       @default(0)
+  category    Category[]
+  star        Int?       @default(0)
+  updatedAt   DateTime   @updatedAt
+  createdAt   DateTime   @default(now())
+  review      Review[]
+  price       Float
+  User        User?      @relation(fields: [userId], references: [id])
+  userId      String?
+  images      Images[]
+  discount    Float      @default(0)
+}
+
+model Review {
+  id        String   @id @default(uuid())
+  user      User?    @relation(fields: [userId], references: [id])
+  book      Book?    @relation(fields: [bookId], references: [id])
+  content   String?
+  rating    Float    @default(0)
+  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
+  userId    String?
+  bookId    String?
+}
+
+model Images {
+  id     String  @id @default(uuid())
+  url    String
+  Book   Book?   @relation(fields: [bookId], references: [id])
+  bookId String?
+}
