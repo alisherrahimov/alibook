@@ -1,0 +1,16 @@
+export enum Colors {
+  white = '#ffffff',
+  black = '#000000',
+  primary = '#FFD700',
+  secondary = '#FFA500',
+  tertiary = '#FF6347',
+  success = '#00FF00',
+  error = '#FF0000',
+  warning = '#FFA500',
+  info = '#00BFFF',
+  light = '#f9f9f9',
+  dark = '#333333',
+  grey = '#808080',
+  transparent = 'transparent',
+  titleColor = '#727272',
+}

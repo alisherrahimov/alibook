@@ -1,0 +1,15 @@
+{
+  "extends": "@react-native/typescript-config/tsconfig.json",
+  "compilerOptions": {
+    "paths": {
+      "@icons": ["./src/assets/icons/index.ts"],
+      "@images": ["./src/assets/images/index.ts"],
+      "@components": ["./src/components/index.ts"],
+      "@config": ["./src/config/index.ts"],
+      "@constants": ["./src/constants/index.ts"],
+      "@hooks": ["./src/hooks/index.ts"],
+      "@navigation": ["./src/navigation/index.ts"],
+      "@screens": ["./src/screens/index.ts"]
+    }
+  }
+}
