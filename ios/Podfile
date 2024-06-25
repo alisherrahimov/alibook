@@ -22,6 +22,12 @@ target 'alibook' do
     # An absolute path to your application root.
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
+  pod 'GCDWebServer', podspec: 'https://raw.githubusercontent.com/readium/GCDWebServer/3.7.5/GCDWebServer.podspec', modular_headers: true
+  pod 'R2Shared', podspec: 'https://raw.githubusercontent.com/readium/swift-toolkit/2.6.0/Support/CocoaPods/ReadiumShared.podspec'
+  pod 'R2Streamer', podspec: 'https://raw.githubusercontent.com/readium/swift-toolkit/2.6.0/Support/CocoaPods/ReadiumStreamer.podspec'
+  pod 'R2Navigator', podspec: 'https://raw.githubusercontent.com/readium/swift-toolkit/2.6.0/Support/CocoaPods/ReadiumNavigator.podspec'
+  pod 'ReadiumInternal', podspec: 'https://raw.githubusercontent.com/readium/swift-toolkit/2.6.0/Support/CocoaPods/ReadiumInternal.podspec'
+  pod 'Minizip', modular_headers: true
 
   target 'alibookTests' do
     inherit! :complete

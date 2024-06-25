@@ -1,18 +1,16 @@
-import {StyleSheet, View} from 'react-native';
+import {Platform, StatusBar, StyleSheet} from 'react-native';
 import React from 'react';
 
-import {BookView} from '@screens';
-// StatusBar.setBarStyle('dark-content', true);
-// if (Platform.OS === 'android') {
-//   StatusBar.setBackgroundColor('rgba(0,0,0,0)');
-//   StatusBar.setTranslucent(true);
-// }
+import './src/config/unistyles';
+import {Navigation} from '@navigation';
+StatusBar.setBarStyle('default');
+if (Platform.OS === 'android') {
+  StatusBar.setBackgroundColor('rgba(0,0,0,0)');
+  StatusBar.setTranslucent(true);
+}
+
 const App = () => {
-  return (
-    <View style={styles.container}>
-      <BookView />
-    </View>
-  );
+  return <Navigation />;
 };
 
 export default App;

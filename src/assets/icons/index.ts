@@ -1,16 +1,20 @@
-import ChevronIcon from './Chevron';
-import ListIcon from './List';
-import ThreeDotIcon from './ThreeDot';
-import SearchIcon from './Search';
-import ChaptersIcon from './Chapters';
-import MoonIcon from './Moon';
-import SettingsIcon from './Settings';
-export {
-  ChevronIcon,
-  MoonIcon,
-  ListIcon,
-  ChaptersIcon,
-  ThreeDotIcon,
-  SearchIcon,
-  SettingsIcon,
-};
+export {default as HomeFillIcon} from './HomeFill';
+export {default as HomeOutlineIcon} from './HomeOutline';
+export {default as ChevronIcon} from './Chevron';
+export {default as ChaptersIcon} from './Chapters';
+export {default as SearchIcon} from './Search';
+export {default as Lighticon} from './Light';
+export {default as ThreeDotIcon} from './ThreeDot';
+export {default as ListIcon} from './List';
+export {default as MoonIcon} from './Moon';
+export {default as SettingsIcon} from './Settings';
+export {default as PurchaseFillIcon} from './PurchaseFill';
+export {default as PurchaseOutlineIcon} from './PurchaseOutline';
+export {default as DiscoverFillIcon} from './DiscoverFill';
+export {default as DiscoverOutlineIcon} from './DiscoverOutline';
+export {default as WishlistFillIcon} from './WishlistFill';
+export {default as WishlistOutlineIcon} from './WishlistOutline';
+export {default as ProfileFillIcon} from './ProfileFill';
+export {default as ProfileOutlineIcon} from './ProfileOutline';
+export {default as StarIcon} from './Star';
+export {default as NotificationIcon} from './Notification';

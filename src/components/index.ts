@@ -1,4 +1,10 @@
-import RenderEpub from './book-view/RenderEpub';
-import TextX from './text/Text';
-
-export {RenderEpub, TextX};
+export {default as BottomSheet} from './bottomsheet/Settings';
+export {default as View} from './view/View';
+export {default as Touchable} from './button/Touchable';
+export {default as Text} from './text/Text';
+export {default as TouchableWithOutKeyBoard} from './keyboard/TouchableWithOutKeyBoard';
+export {default as Input} from './input/Input';
+export {default as Image} from './image/Image';
+export {default as Card} from './card/Card';
+export {default as Header} from './header/Header';
+export {default as MainHeader} from './header2/MainHeader';

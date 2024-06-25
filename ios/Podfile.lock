@@ -1,12 +1,41 @@
 PODS:
   - boost (1.83.0)
+  - CryptoSwift (1.5.1)
+  - DifferenceKit (1.3.0):
+    - DifferenceKit/Core (= 1.3.0)
+    - DifferenceKit/UIKitExtension (= 1.3.0)
+  - DifferenceKit/Core (1.3.0)
+  - DifferenceKit/UIKitExtension (1.3.0):
+    - DifferenceKit/Core
   - DoubleConversion (1.1.6)
   - FBLazyVector (0.74.1)
   - fmt (9.1.0)
+  - Fuzi (3.1.3)
+  - GCDWebServer (3.7.5):
+    - GCDWebServer/Core (= 3.7.5)
+  - GCDWebServer/Core (3.7.5)
   - glog (0.3.5)
   - hermes-engine (0.74.1):
     - hermes-engine/Pre-built (= 0.74.1)
   - hermes-engine/Pre-built (0.74.1)
+  - Minizip (1.0.0)
+  - R2Navigator (2.6.0):
+    - DifferenceKit (~> 1.0)
+    - R2Shared
+    - ReadiumInternal
+    - SwiftSoup (<= 2.5.3)
+  - R2Shared (2.6.0):
+    - Fuzi (~> 3.0)
+    - Minizip (~> 1.0)
+    - ReadiumInternal
+    - SwiftSoup (<= 2.5.3)
+  - R2Streamer (2.6.0):
+    - CryptoSwift (<= 1.5.1)
+    - Fuzi (~> 3.0)
+    - GCDWebServer (~> 3.0)
+    - Minizip (~> 1.0)
+    - R2Shared
+    - ReadiumInternal
   - RCT-Folly (2024.01.01.00):
     - boost
     - DoubleConversion
@@ -935,9 +964,9 @@ PODS:
   - React-Mapbuffer (0.74.1):
     - glog
     - React-debug
-  - react-native-safe-area-context (4.10.1):
+  - react-native-safe-area-context (4.10.5):
     - React-Core
-  - react-native-skia (1.2.3):
+  - react-native-skia (1.3.6):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -960,33 +989,7 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - react-native-skia-skottie (2.1.4):
-    - React
-    - React-Core
-    - react-native-skia
-    - SSZipArchive
-  - react-native-unistyles (2.7.2):
-    - DoubleConversion
-    - glog
-    - hermes-engine
-    - RCT-Folly (= 2024.01.01.00)
-    - RCTRequired
-    - RCTTypeSafety
-    - React-Codegen
-    - React-Core
-    - React-debug
-    - React-Fabric
-    - React-featureflags
-    - React-graphics
-    - React-ImageManager
-    - React-NativeModulesApple
-    - React-RCTFabric
-    - React-rendererdebug
-    - React-utils
-    - ReactCommon/turbomodule/bridging
-    - ReactCommon/turbomodule/core
-    - Yoga
-  - react-native-webview (13.10.2):
+  - react-native-unistyles (2.8.0):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1236,9 +1239,8 @@ PODS:
     - React-logger (= 0.74.1)
     - React-perflogger (= 0.74.1)
     - React-utils (= 0.74.1)
-  - RNFS (2.20.0):
-    - React-Core
-  - RNGestureHandler (2.16.2):
+  - ReadiumInternal (2.6.0)
+  - RNGestureHandler (2.17.1):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1259,7 +1261,7 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - RNReanimated (3.11.0):
+  - RNReanimated (3.12.1):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1280,7 +1282,7 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - RNScreens (3.31.1):
+  - RNScreens (3.32.0):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1302,10 +1304,10 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - RNSVG (14.1.0):
+  - RNSVG (14.2.0):
     - React-Core
   - SocketRocket (0.7.0)
-  - SSZipArchive (2.4.3)
+  - SwiftSoup (2.5.3)
   - Yoga (0.0.0)
 
 DEPENDENCIES:
@@ -1313,8 +1315,13 @@ DEPENDENCIES:
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
   - fmt (from `../node_modules/react-native/third-party-podspecs/fmt.podspec`)
+  - GCDWebServer (from `https://raw.githubusercontent.com/readium/GCDWebServer/3.7.5/GCDWebServer.podspec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
   - hermes-engine (from `../node_modules/react-native/sdks/hermes-engine/hermes-engine.podspec`)
+  - Minizip
+  - R2Navigator (from `https://raw.githubusercontent.com/readium/swift-toolkit/2.6.0/Support/CocoaPods/ReadiumNavigator.podspec`)
+  - R2Shared (from `https://raw.githubusercontent.com/readium/swift-toolkit/2.6.0/Support/CocoaPods/ReadiumShared.podspec`)
+  - R2Streamer (from `https://raw.githubusercontent.com/readium/swift-toolkit/2.6.0/Support/CocoaPods/ReadiumStreamer.podspec`)
   - RCT-Folly (from `../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec`)
   - RCT-Folly/Fabric (from `../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec`)
   - RCTDeprecation (from `../node_modules/react-native/ReactApple/Libraries/RCTFoundation/RCTDeprecation`)
@@ -1343,9 +1350,7 @@ DEPENDENCIES:
   - React-Mapbuffer (from `../node_modules/react-native/ReactCommon`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - "react-native-skia (from `../node_modules/@shopify/react-native-skia`)"
-  - react-native-skia-skottie (from `../node_modules/react-native-skottie`)
   - react-native-unistyles (from `../node_modules/react-native-unistyles`)
-  - react-native-webview (from `../node_modules/react-native-webview`)
   - React-nativeconfig (from `../node_modules/react-native/ReactCommon`)
   - React-NativeModulesApple (from `../node_modules/react-native/ReactCommon/react/nativemodule/core/platform/ios`)
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
@@ -1369,7 +1374,7 @@ DEPENDENCIES:
   - React-runtimescheduler (from `../node_modules/react-native/ReactCommon/react/renderer/runtimescheduler`)
   - React-utils (from `../node_modules/react-native/ReactCommon/react/utils`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
-  - RNFS (from `../node_modules/react-native-fs`)
+  - ReadiumInternal (from `https://raw.githubusercontent.com/readium/swift-toolkit/2.6.0/Support/CocoaPods/ReadiumInternal.podspec`)
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
@@ -1378,8 +1383,12 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - CryptoSwift
+    - DifferenceKit
+    - Fuzi
+    - Minizip
     - SocketRocket
-    - SSZipArchive
+    - SwiftSoup
 
 EXTERNAL SOURCES:
   boost:
@@ -1390,11 +1399,19 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/Libraries/FBLazyVector"
   fmt:
     :podspec: "../node_modules/react-native/third-party-podspecs/fmt.podspec"
+  GCDWebServer:
+    :podspec: https://raw.githubusercontent.com/readium/GCDWebServer/3.7.5/GCDWebServer.podspec
   glog:
     :podspec: "../node_modules/react-native/third-party-podspecs/glog.podspec"
   hermes-engine:
     :podspec: "../node_modules/react-native/sdks/hermes-engine/hermes-engine.podspec"
     :tag: hermes-2024-04-25-RNv0.74.1-b54a3a01c531f4f5f1904cb0770033e8b7153dff
+  R2Navigator:
+    :podspec: https://raw.githubusercontent.com/readium/swift-toolkit/2.6.0/Support/CocoaPods/ReadiumNavigator.podspec
+  R2Shared:
+    :podspec: https://raw.githubusercontent.com/readium/swift-toolkit/2.6.0/Support/CocoaPods/ReadiumShared.podspec
+  R2Streamer:
+    :podspec: https://raw.githubusercontent.com/readium/swift-toolkit/2.6.0/Support/CocoaPods/ReadiumStreamer.podspec
   RCT-Folly:
     :podspec: "../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec"
   RCTDeprecation:
@@ -1447,12 +1464,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-safe-area-context"
   react-native-skia:
     :path: "../node_modules/@shopify/react-native-skia"
-  react-native-skia-skottie:
-    :path: "../node_modules/react-native-skottie"
   react-native-unistyles:
     :path: "../node_modules/react-native-unistyles"
-  react-native-webview:
-    :path: "../node_modules/react-native-webview"
   React-nativeconfig:
     :path: "../node_modules/react-native/ReactCommon"
   React-NativeModulesApple:
@@ -1499,8 +1512,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/react/utils"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
-  RNFS:
-    :path: "../node_modules/react-native-fs"
+  ReadiumInternal:
+    :podspec: https://raw.githubusercontent.com/readium/swift-toolkit/2.6.0/Support/CocoaPods/ReadiumInternal.podspec
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
   RNReanimated:
@@ -1514,13 +1527,21 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   boost: d3f49c53809116a5d38da093a8aa78bf551aed09
+  CryptoSwift: c4f2debceb38bf44c80659afe009f71e23e4a082
+  DifferenceKit: ab185c4d7f9cef8af3fcf593e5b387fb81e999ca
   DoubleConversion: 76ab83afb40bddeeee456813d9c04f67f78771b5
   FBLazyVector: 898d14d17bf19e2435cafd9ea2a1033efe445709
   fmt: 4c2741a687cc09f0634a2e2c72a838b99f1ff120
+  Fuzi: 4c10d6449c0b49a85cd75b13844c559c0fc71220
+  GCDWebServer: 5e989dbe6795b9975f378cc0eeeee49ef2c51b6f
   glog: c5d68082e772fa1c511173d6b30a9de2c05a69a2
   hermes-engine: 16b8530de1b383cdada1476cf52d1b52f0692cbc
+  Minizip: 188cb3e39a1195c283ae03bf673d182596fefd0b
+  R2Navigator: 4b53a3d10dd7282c9d9cd6d2188e68f0041840fc
+  R2Shared: fa34e56aa6e67e34608bf6ef72acf2631cbc4b5e
+  R2Streamer: d2501f0395c868cb65329ec46e3ab604b8b98687
   RCT-Folly: 02617c592a293bd6d418e0a88ff4ee1f88329b47
-  RCTDeprecation: 4dc9c8fbcb15bc9e8f3cfa601ddc190e120f099b
+  RCTDeprecation: efb313d8126259e9294dc4ee0002f44a6f676aba
   RCTRequired: f49ea29cece52aee20db633ae7edc4b271435562
   RCTTypeSafety: a11979ff0570d230d74de9f604f7d19692157bc4
   React: 88794fad7f460349dbc9df8a274d95f37a009f5d
@@ -1543,11 +1564,9 @@ SPEC CHECKSUMS:
   React-jsitracing: 233d1a798fe0ff33b8e630b8f00f62c4a8115fbc
   React-logger: 7e7403a2b14c97f847d90763af76b84b152b6fce
   React-Mapbuffer: 11029dcd47c5c9e057a4092ab9c2a8d10a496a33
-  react-native-safe-area-context: dcab599c527c2d7de2d76507a523d20a0b83823d
-  react-native-skia: 80282ed176572d97f6abe128ddcb567e0c33fe93
-  react-native-skia-skottie: a595d45fb2be0f338a3e4fbd641a1804328eb886
-  react-native-unistyles: 830bdb060d7fb28da7f140b9296a6199d4214a41
-  react-native-webview: 2905d1455be11bcbd909ef33472d8fcdf7abcc41
+  react-native-safe-area-context: a240ad4b683349e48b1d51fed1611138d1bdad97
+  react-native-skia: a86b6842bcd2008ca618a372d3dda9ffae557456
+  react-native-unistyles: aa7356300aadbdd312df079e2de9f1198a6ef27f
   React-nativeconfig: b0073a590774e8b35192fead188a36d1dca23dec
   React-NativeModulesApple: df46ff3e3de5b842b30b4ca8a6caae6d7c8ab09f
   React-perflogger: 3d31e0d1e8ad891e43a09ac70b7b17a79773003a
@@ -1571,15 +1590,15 @@ SPEC CHECKSUMS:
   React-runtimescheduler: e2152ed146b6a35c07386fc2ac4827b27e6aad12
   React-utils: 3285151c9d1e3a28a9586571fc81d521678c196d
   ReactCommon: f42444e384d82ab89184aed5d6f3142748b54768
-  RNFS: 4ac0f0ea233904cb798630b3c077808c06931688
-  RNGestureHandler: 2282cfbcf86c360d29f44ace393203afd5c6cff7
-  RNReanimated: 7ad0f08a845cb60955ee5d461d2156d7b9707118
-  RNScreens: b32a9ff15bea7fcdbe5dff6477bc503f792b1208
-  RNSVG: ba3e7232f45e34b7b47e74472386cf4e1a676d0a
+  ReadiumInternal: a74f61e9c0fbe2407f4e5c53aa032aa92193f3d5
+  RNGestureHandler: 8dbcccada4a7e702e7dec9338c251b1cf393c960
+  RNReanimated: f9192536fa8a312c737eaf15c905f78831193ef1
+  RNScreens: 5aeecbb09aa7285379b6e9f3c8a3c859bb16401c
+  RNSVG: 963a95f1f5d512a13d11ffd50d351c87fb5c6890
   SocketRocket: abac6f5de4d4d62d24e11868d7a2f427e0ef940d
-  SSZipArchive: fe6a26b2a54d5a0890f2567b5cc6de5caa600aef
-  Yoga: b9a182ab00cf25926e7f79657d08c5d23c2d03b0
+  SwiftSoup: 33e8d374021a6c332788f78fa29a93227d8a7699
+  Yoga: 348f8b538c3ed4423eb58a8e5730feec50bce372
 
-PODFILE CHECKSUM: adc073ac0b9784361ca10b91cedf288128b813b6
+PODFILE CHECKSUM: fc51bf94dcb7caef757483e85b436a4c784c9e9d
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.15.2

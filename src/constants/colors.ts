@@ -13,4 +13,9 @@ export enum Colors {
   grey = '#808080',
   transparent = 'transparent',
   titleColor = '#727272',
+  progressBar = '#eeeeee',
+  orage = '#f89300',
+  x9e9f9e = '#9e9f9e',
+  xf59202 = '#f59202',
+  x181a1f = '#181a1f',
 }

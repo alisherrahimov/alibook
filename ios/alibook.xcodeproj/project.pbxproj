@@ -12,9 +12,15 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		3E79579572FD4DB7B08A8463 /* index.ts in Resources */ = {isa = PBXBuildFile; fileRef = ED058D0A8785471382C07768 /* index.ts */; };
+		4061FD2621F6484297E53004 /* Urbanist-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 82C64F537E204E2BA6585DF3 /* Urbanist-Medium.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-alibook-alibookTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-alibook-alibookTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		8FBDE0DFA2124564855AAE79 /* Urbanist-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3708A73DE9C74B99B19D39BF /* Urbanist-Regular.ttf */; };
 		98311F6780E2BB5CF1B64866 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 041EC51E6CBECACEE7FCF2F0 /* PrivacyInfo.xcprivacy */; };
+		A4B3E8D1D8E04F8F9609266A /* Urbanist-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 933D65D1881448F5B9A6FA73 /* Urbanist-Italic.ttf */; };
+		B2B0CD83227C46548B53F96D /* Urbanist-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A70AF1847D8F4D4290E1695C /* Urbanist-Bold.ttf */; };
+		D1660D428A9A425592DBDCF1 /* Urbanist-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48508D037EEC4B9C966315A5 /* Urbanist-Thin.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,12 +46,18 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = alibook/main.m; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = alibook/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-alibook-alibookTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-alibook-alibookTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3708A73DE9C74B99B19D39BF /* Urbanist-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Urbanist-Regular.ttf"; path = "../src/assets/fonts/Urbanist-Regular.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-alibook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-alibook.debug.xcconfig"; path = "Target Support Files/Pods-alibook/Pods-alibook.debug.xcconfig"; sourceTree = "<group>"; };
+		48508D037EEC4B9C966315A5 /* Urbanist-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Urbanist-Thin.ttf"; path = "../src/assets/fonts/Urbanist-Thin.ttf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-alibook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-alibook.release.xcconfig"; path = "Target Support Files/Pods-alibook/Pods-alibook.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-alibook-alibookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-alibook-alibookTests.debug.xcconfig"; path = "Target Support Files/Pods-alibook-alibookTests/Pods-alibook-alibookTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-alibook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-alibook.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = alibook/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		82C64F537E204E2BA6585DF3 /* Urbanist-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Urbanist-Medium.ttf"; path = "../src/assets/fonts/Urbanist-Medium.ttf"; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-alibook-alibookTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-alibook-alibookTests.release.xcconfig"; path = "Target Support Files/Pods-alibook-alibookTests/Pods-alibook-alibookTests.release.xcconfig"; sourceTree = "<group>"; };
+		933D65D1881448F5B9A6FA73 /* Urbanist-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Urbanist-Italic.ttf"; path = "../src/assets/fonts/Urbanist-Italic.ttf"; sourceTree = "<group>"; };
+		A70AF1847D8F4D4290E1695C /* Urbanist-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Urbanist-Bold.ttf"; path = "../src/assets/fonts/Urbanist-Bold.ttf"; sourceTree = "<group>"; };
+		ED058D0A8785471382C07768 /* index.ts */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = index.ts; path = ../src/assets/fonts/index.ts; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -127,6 +139,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				A32B7985A878464284CFA1BF /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -140,6 +153,20 @@
 				00E356EE1AD99517003FC87E /* alibookTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A32B7985A878464284CFA1BF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A70AF1847D8F4D4290E1695C /* Urbanist-Bold.ttf */,
+				933D65D1881448F5B9A6FA73 /* Urbanist-Italic.ttf */,
+				82C64F537E204E2BA6585DF3 /* Urbanist-Medium.ttf */,
+				3708A73DE9C74B99B19D39BF /* Urbanist-Regular.ttf */,
+				48508D037EEC4B9C966315A5 /* Urbanist-Thin.ttf */,
+				ED058D0A8785471382C07768 /* index.ts */,
+			);
+			name = Resources;
+			path = "";
 			sourceTree = "<group>";
 		};
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
@@ -249,6 +276,12 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				98311F6780E2BB5CF1B64866 /* PrivacyInfo.xcprivacy in Resources */,
+				B2B0CD83227C46548B53F96D /* Urbanist-Bold.ttf in Resources */,
+				A4B3E8D1D8E04F8F9609266A /* Urbanist-Italic.ttf in Resources */,
+				4061FD2621F6484297E53004 /* Urbanist-Medium.ttf in Resources */,
+				8FBDE0DFA2124564855AAE79 /* Urbanist-Regular.ttf in Resources */,
+				D1660D428A9A425592DBDCF1 /* Urbanist-Thin.ttf in Resources */,
+				3E79579572FD4DB7B08A8463 /* index.ts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

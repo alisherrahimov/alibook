@@ -1,6 +1,7 @@
 import React, {PropsWithChildren} from 'react';
 import {DimensionValue, Text, TextStyle} from 'react-native';
 import {Colors, FontSize} from '@constants';
+import {FONT} from '@fonts';
 
 interface TextProps extends PropsWithChildren {
   color?: string | Colors;
@@ -44,6 +45,7 @@ interface TextProps extends PropsWithChildren {
   pV?: DimensionValue | undefined;
   mH?: DimensionValue | undefined;
   mV?: DimensionValue | undefined;
+  font?: FONT;
 }
 
 const TextX: React.FC<TextProps> = ({
@@ -65,6 +67,7 @@ const TextX: React.FC<TextProps> = ({
   pV,
   mH,
   mV,
+  font = FONT.MEDIUM,
 }) => {
   return (
     <Text
@@ -84,7 +87,7 @@ const TextX: React.FC<TextProps> = ({
         paddingVertical: pV,
         marginHorizontal: mH,
         marginVertical: mV,
-
+        fontFamily: font,
         ...style,
       }}>
       {children!.toString().length > 20 && cut
