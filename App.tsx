@@ -1,4 +1,4 @@
-import {Platform, StatusBar, StyleSheet} from 'react-native';
+import {Platform, StatusBar} from 'react-native';
 import React from 'react';
 
 import './src/config/unistyles';
@@ -14,9 +14,3 @@ const App = () => {
 };
 
 export default App;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});

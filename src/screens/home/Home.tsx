@@ -1,19 +1,9 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {createStyleSheet, useStyles} from 'react-native-unistyles';
-import {Header, MainHeader, Text, View} from '@components';
-import {ScrollView} from 'react-native';
-import {BookService} from '../../api';
+import {Header, View} from '@components';
 
 const Home = () => {
   const {theme} = useStyles(homeStyles);
-
-  useEffect(() => {
-    async function fetchData() {
-      const response = await BookService.getBooks();
-      console.log(response.data);
-    }
-    fetchData();
-  }, []);
 
   return (
     <View backgroundColor={theme.colors.background} flex={1}>

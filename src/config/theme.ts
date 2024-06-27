@@ -8,6 +8,7 @@ export const lightTheme = {
     bottomTabActiveIcon: Colors.xf59202,
     bottomTabActiveText: Colors.xf59202,
     bottomTabInactiveText: Colors.x9e9f9e,
+    lineColor: Colors.xefefef,
   },
 } as const;
 
@@ -19,6 +20,7 @@ export const darkTheme = {
     bottomTabActiveIcon: Colors.xf59202,
     bottomTabActiveText: Colors.xf59202,
     bottomTabInactiveText: Colors.x9e9f9e,
+    lineColor: Colors.xefefef,
   },
 } as const;
 

@@ -10,7 +10,8 @@
       "@hooks": ["./src/hooks/index.ts"],
       "@navigation": ["./src/navigation/index.ts"],
       "@screens": ["./src/screens/index.ts"],
-      "@fonts": ["./src/assets/fonts/index.ts"]
+      "@fonts": ["./src/assets/fonts/index.ts"],
+      "@api": ["./src/api/index.ts"]
     }
   }
 }

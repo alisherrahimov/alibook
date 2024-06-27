@@ -8,3 +8,4 @@ export {default as Image} from './image/Image';
 export {default as Card} from './card/Card';
 export {default as Header} from './header/Header';
 export {default as MainHeader} from './header2/MainHeader';
+export {default as Line} from './line/Line';
