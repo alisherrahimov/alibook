@@ -2,7 +2,7 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Discover, Home, Profile, Purchased, Wishlist} from '@screens';
+import {Discover, Home, Payment, Profile, Purchased, Wishlist} from '@screens';
 import MyTabBar from './bottom/BottomTab';
 import {
   DiscoverFillIcon,
@@ -16,6 +16,7 @@ import {
   WishlistFillIcon,
   WishlistOutlineIcon,
 } from '@icons';
+import {navigationRef} from './navigationRef';
 
 const BottomTabNavigator = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -51,6 +52,10 @@ const screens = [
     icon_fill: (color: string) => <ProfileFillIcon color={color} />,
     icon_outline: (color: string) => <ProfileOutlineIcon color={color} />,
   },
+  {
+    name: 'Payment',
+    component: Payment,
+  },
 ];
 
 const BottomTab = () => {
@@ -75,9 +80,16 @@ const BottomTab = () => {
 
 const Navigation = () => {
   return (
-    <NavigationContainer>
+    <NavigationContainer ref={navigationRef}>
       <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen name="BottomTab" component={BottomTab} />
+        {screens.slice(5).map(screen => (
+          <Stack.Screen
+            key={screen.name}
+            name={screen.name}
+            component={screen.component}
+          />
+        ))}
       </Stack.Navigator>
     </NavigationContainer>
   );

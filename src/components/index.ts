@@ -9,3 +9,5 @@ export {default as Card} from './card/Card';
 export {default as Header} from './header/Header';
 export {default as MainHeader} from './header2/MainHeader';
 export {default as Line} from './line/Line';
+export {default as Switch} from './switch/Switch';
+export {default as MenuButton} from './profileButton/MenuButton';

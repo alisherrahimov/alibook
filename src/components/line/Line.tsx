@@ -22,7 +22,7 @@ const Line: React.FC<LineProps> = ({
   return (
     <View
       width={width || '90%'}
-      height={height || 1}
+      height={height || 0.7}
       backgroundColor={color || theme.colors.lineColor}
       marginHorizontal={marginHorizontal}
       marginVertical={marginVertical}

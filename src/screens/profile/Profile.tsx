@@ -1,9 +1,21 @@
-import {Header, Text, View, Image, Line, Touchable} from '@components';
+import {
+  Header,
+  Text,
+  View,
+  Image,
+  Line,
+  Touchable,
+  Switch,
+  MenuButton,
+} from '@components';
 import {Colors, FontSize} from '@constants';
 import {FONT} from '@fonts';
 import {
   EyeFillIcon,
+  HelpIcon,
+  InfoIcon,
   LanguageFillIcon,
+  LogOutIcon,
   PaymentIcon,
   PenIcon,
   ProfileFillIcon,
@@ -14,67 +26,15 @@ import {
 } from '@icons';
 import React from 'react';
 import {ScrollView} from 'react-native';
-import {createStyleSheet, useStyles} from 'react-native-unistyles';
-
-const rows = [
-  {
-    id: 1,
-    title: 'Personal Information',
-    imageIcon: <ProfileFillIcon width={28} height={28} />,
-    rightIcon: <RightRowIcon />,
-  },
-  {
-    id: 2,
-    title: 'Notifications',
-    imageIcon: <RingIcon width={28} height={28} />,
-    rightIcon: <RightRowIcon />,
-  },
-  {
-    id: 3,
-    title: 'Settings',
-    imageIcon: <SettingsFillIcon width={28} height={28} />,
-    rightIcon: <RightRowIcon />,
-  },
-  {
-    id: 4,
-    title: 'Security',
-    imageIcon: <SecurityFillIcon width={28} height={28} />,
-    rightIcon: <RightRowIcon />,
-  },
-  {
-    id: 5,
-    title: 'Language',
-    imageIcon: <LanguageFillIcon width={28} height={28} />,
-    rightIcon: <RightRowIcon />,
-  },
-  {
-    id: 6,
-    title: 'Dark Mode',
-    imageIcon: <EyeFillIcon width={28} height={28} />,
-    rightIcon: <RightRowIcon />,
-  },
-  {
-    id: 7,
-    title: 'Help Center',
-    imageIcon: <EyeFillIcon width={28} height={28} />,
-    rightIcon: <RightRowIcon />,
-  },
-  {
-    id: 8,
-    title: 'About Alibook',
-    imageIcon: <EyeFillIcon width={28} height={28} />,
-    rightIcon: <RightRowIcon />,
-  },
-  {
-    id: 9,
-    title: 'Log Out',
-    imageIcon: <EyeFillIcon width={28} height={28} />,
-    rightIcon: <RightRowIcon />,
-  },
-];
+import {useStyles} from 'react-native-unistyles';
+import {navigate} from '../../navigation/navigationRef';
 
 const Profile = () => {
   const {theme} = useStyles();
+
+  const navigateRoute = (screen: string) => {
+    navigate(screen);
+  };
   return (
     <View flex={1} backgroundColor={theme.colors.background}>
       <Header title="Profile" />
@@ -92,105 +52,96 @@ const Profile = () => {
                 uri: 'https://newprofilepic.photo-cdn.net//assets/images/article/profile.jpg?90af0c8',
               }}
             />
-            <Text size={FontSize.x18} font={FONT.BOLD} mLeft={20}>
+            <Text
+              color={theme.colors.typography}
+              size={FontSize.x18}
+              font={FONT.BOLD}
+              mLeft={20}>
               John Doe
             </Text>
           </View>
-          <PenIcon />
+          <PenIcon color={theme.colors.typography} />
         </View>
-
+        <Line marginVertical={15} width={'100%'} height={0.5} />
+        <MenuButton
+          onPress={() => navigateRoute('Payment')}
+          icon={<PaymentIcon color={Colors.x45dba7} />}
+          iconBackgroundColor={theme.colors.securityIconBackground}
+          title="Payment Methods"
+          rightIcon={<RightRowIcon color={theme.colors.typography} />}
+        />
         <Line marginVertical={15} width={'100%'} />
-        <Touchable>
-          <View
-            flexDirection="row"
-            justifyContent="space-between"
-            alignItems="center">
-            <View flexDirection="row" alignItems="center">
-              <View
-                borderRadius={50}
-                width={60}
-                height={60}
-                alignItems="center"
-                backgroundColor="#F5F5F5"
-                justifyContent="center">
-                <PaymentIcon color={Colors.x45dba7} />
-              </View>
-              <Text size={FontSize.x18} font={FONT.BOLD} mLeft={20}>
-                Payment Methods
-              </Text>
-            </View>
-            <RightRowIcon />
-          </View>
-        </Touchable>
+        <MenuButton
+          icon={
+            <ProfileFillIcon width={28} height={28} color={Colors.x3575fe} />
+          }
+          iconBackgroundColor={theme.colors.personalIconBackground}
+          title="Personal Information"
+          rightIcon={<RightRowIcon color={theme.colors.typography} />}
+        />
+        <MenuButton
+          icon={<RingIcon width={28} height={28} color={Colors.xff6e79} />}
+          iconBackgroundColor={theme.colors.notificationIconBackground}
+          title="Notifications"
+          rightIcon={<RightRowIcon color={theme.colors.typography} />}
+        />
+        <MenuButton
+          icon={
+            <SettingsFillIcon width={28} height={28} color={Colors.x7455ff} />
+          }
+          iconBackgroundColor={theme.colors.settingIconBackground}
+          title="Settings"
+          rightIcon={<RightRowIcon color={theme.colors.typography} />}
+        />
+        <MenuButton
+          icon={
+            <SecurityFillIcon width={28} height={28} color={Colors.x45dba7} />
+          }
+          iconBackgroundColor={theme.colors.securityIconBackground}
+          title="Security"
+          rightIcon={<RightRowIcon color={theme.colors.typography} />}
+        />
+        <MenuButton
+          icon={
+            <LanguageFillIcon width={28} height={28} color={Colors.xf99a0f} />
+          }
+          iconBackgroundColor={theme.colors.languageIconBackground}
+          title="Language"
+          rightIcon={<RightRowIcon color={theme.colors.typography} />}
+        />
+        <MenuButton
+          icon={<EyeFillIcon width={28} height={28} color={Colors.x3575fe} />}
+          iconBackgroundColor={theme.colors.settingIconBackground}
+          title="Dark Mode"
+          rightIcon={
+            <Switch
+              circleColor={Colors.orage}
+              backgroundColor={theme.colors.languageIconBackground}
+            />
+          }
+        />
         <Line marginVertical={15} width={'100%'} />
-        {rows.slice(0, 6).map((val, index) => {
-          return (
-            <Touchable marginVertical={8} key={index}>
-              <View
-                key={index}
-                flexDirection="row"
-                justifyContent="space-between"
-                alignItems="center">
-                <View flexDirection="row" alignItems="center">
-                  <View
-                    borderRadius={50}
-                    width={60}
-                    height={60}
-                    alignItems="center"
-                    backgroundColor="#F5F5F5"
-                    justifyContent="center">
-                    {val.imageIcon}
-                  </View>
-                  <Text size={FontSize.x18} font={FONT.BOLD} mLeft={20}>
-                    {val.title}
-                  </Text>
-                </View>
-                {val.rightIcon}
-              </View>
-            </Touchable>
-          );
-        })}
-        <Line marginVertical={15} width={'100%'} />
-        {rows.slice(6).map((val, index) => {
-          return (
-            <Touchable marginVertical={8} key={index}>
-              <View
-                key={index}
-                flexDirection="row"
-                justifyContent="space-between"
-                alignItems="center">
-                <View flexDirection="row" alignItems="center">
-                  <View
-                    borderRadius={50}
-                    width={60}
-                    height={60}
-                    alignItems="center"
-                    backgroundColor="#F5F5F5"
-                    justifyContent="center">
-                    {val.imageIcon}
-                  </View>
-                  <Text size={FontSize.x18} font={FONT.BOLD} mLeft={20}>
-                    {val.title}
-                  </Text>
-                </View>
-                {val.rightIcon}
-              </View>
-            </Touchable>
-          );
-        })}
+        <MenuButton
+          icon={<HelpIcon width={28} height={28} color={Colors.x45dba7} />}
+          iconBackgroundColor={theme.colors.securityIconBackground}
+          title="Help Center"
+          rightIcon={<RightRowIcon color={theme.colors.typography} />}
+        />
+        <MenuButton
+          icon={<InfoIcon width={28} height={28} color={Colors.xf99a0f} />}
+          iconBackgroundColor={theme.colors.languageIconBackground}
+          title="About Alibook"
+          rightIcon={<RightRowIcon color={theme.colors.typography} />}
+        />
+        <MenuButton
+          icon={<LogOutIcon width={28} height={28} color={Colors.xff6e79} />}
+          iconBackgroundColor={theme.colors.notificationIconBackground}
+          title="Dark Mode"
+          rightIcon={<></>}
+        />
       </ScrollView>
     </View>
   );
 };
 
 export default Profile;
-
-const profileStyles = createStyleSheet(theme => {
-  return {
-    image: {
-      width: 80,
-      height: 80,
-      borderRadius: 40,
-    },
-  };
-});

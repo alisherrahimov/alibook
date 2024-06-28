@@ -26,3 +26,6 @@ export {default as SettingsFillIcon} from './SettingsFill';
 export {default as SecurityFillIcon} from './SecurityFill';
 export {default as LanguageFillIcon} from './LanguageFill';
 export {default as EyeFillIcon} from './EyeFill';
+export {default as HelpIcon} from './Help';
+export {default as InfoIcon} from './Info';
+export {default as LogOutIcon} from './LogOut';

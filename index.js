@@ -12,9 +12,7 @@ export default function Main() {
   return (
     <GestureHandlerRootView style={{flex: 1}}>
       <SafeAreaProvider>
-        <SafeAreaView style={{flex: 1}} edges={['bottom']}>
-          <App />
-        </SafeAreaView>
+        <App />
       </SafeAreaProvider>
     </GestureHandlerRootView>
   );

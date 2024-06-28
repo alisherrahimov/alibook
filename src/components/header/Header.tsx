@@ -1,18 +1,18 @@
 import React from 'react';
-import {View, Text, Touchable} from '@components';
+import {View, Text} from '@components';
 import {createStyleSheet, useStyles} from 'react-native-unistyles';
-import {NotificationIcon, SearchIcon} from '@icons';
 import {FONT} from '@fonts';
 import {FontSize} from '@constants';
+import {Platform} from 'react-native';
 type HeaderProps = {
   title: string;
   buttons?: React.ReactNode | React.ReactNode[];
 };
 const Header: React.FC<HeaderProps> = ({title, buttons}) => {
-  const {styles, theme} = useStyles(headerStyles);
+  const {theme} = useStyles(headerStyles);
   return (
     <View
-      height={110}
+      height={Platform.OS === 'ios' ? 110 : 90}
       alignItems="flex-start"
       justifyContent="flex-end"
       backgroundColor={theme.colors.background}>
@@ -38,7 +38,7 @@ const Header: React.FC<HeaderProps> = ({title, buttons}) => {
 
 export default Header;
 
-const headerStyles = createStyleSheet(theme => {
+const headerStyles = createStyleSheet(() => {
   return {
     flex: {
       flex: 1,

@@ -1,5 +1,6 @@
 import React, {PropsWithChildren} from 'react';
 import {DimensionValue, ViewStyle, View as ViewX} from 'react-native';
+import {useStyles} from 'react-native-unistyles';
 interface ViewProps extends PropsWithChildren {
   style?: ViewStyle;
   flex?: number;
@@ -99,11 +100,12 @@ const View: React.FC<ViewProps> = ({
   aspectRatio,
   opacity,
 }) => {
+  const {theme} = useStyles();
   const viewStyle: ViewStyle = {
     flex,
     width,
     height,
-    backgroundColor,
+    backgroundColor: backgroundColor || theme.colors.background,
     borderRadius,
     borderWidth,
     borderColor,
