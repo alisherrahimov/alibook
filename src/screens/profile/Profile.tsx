@@ -1,13 +1,4 @@
-import {
-  Header,
-  Text,
-  View,
-  Image,
-  Line,
-  Touchable,
-  Switch,
-  MenuButton,
-} from '@components';
+import {Header, Text, View, Image, Line, Switch, MenuButton} from '@components';
 import {Colors, FontSize} from '@constants';
 import {FONT} from '@fonts';
 import {

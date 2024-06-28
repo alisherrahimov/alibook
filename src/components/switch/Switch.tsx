@@ -40,7 +40,7 @@ const Switch: React.FC<SwitchProps> = ({
   const toggleSwitch = () => {
     valueX.value = isEnabled ? 0 : 27.5;
     setIsEnabled(previousState => !previousState);
-    UnistylesRuntime.setTheme(!isEnabled ? 'dark' : 'light');
+    UnistylesRuntime.setTheme(isEnabled ? 'light' : 'dark');
   };
 
   return (

@@ -1,11 +1,13 @@
-import {Platform, TouchableOpacity} from 'react-native';
+import {Platform} from 'react-native';
 import {Touchable, Text, View} from '@components';
 import {useStyles} from 'react-native-unistyles';
 
+import React from 'react';
 const MyTabBar = ({state, descriptors, navigation}) => {
   const {theme} = useStyles();
+
   return (
-    <View flexDirection="row">
+    <View style={{flexDirection: 'row'}}>
       {state.routes.map((route, index) => {
         const {options} = descriptors[route.key];
         const label =
@@ -36,7 +38,7 @@ const MyTabBar = ({state, descriptors, navigation}) => {
             alignItems="center"
             justifyContent="center"
             onPress={onPress}
-            backgroundColor={theme.colors.background}
+            // backgroundColor={theme.colors.background}
             style={{flex: 1}}>
             {options.tabBarIcon({
               focused: isFocused,
