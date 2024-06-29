@@ -2,7 +2,20 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Discover, Home, Payment, Profile, Purchased, Wishlist} from '@screens';
+import {
+  Discover,
+  Home,
+  Language,
+  Login,
+  Notification,
+  Notifications,
+  Payment,
+  PersonalInfo,
+  Profile,
+  Purchased,
+  Verification,
+  Wishlist,
+} from '@screens';
 import MyTabBar from './bottom/BottomTab';
 import {
   DiscoverFillIcon,
@@ -21,7 +34,7 @@ import {navigationRef} from './navigationRef';
 const BottomTabNavigator = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
-const screens = [
+const bottom_tabs = [
   {
     name: 'Home',
     component: Home,
@@ -52,9 +65,35 @@ const screens = [
     icon_fill: (color: string) => <ProfileFillIcon color={color} />,
     icon_outline: (color: string) => <ProfileOutlineIcon color={color} />,
   },
+];
+const screens = [
   {
     name: 'Payment',
     component: Payment,
+  },
+  {
+    name: 'PersonalInfo',
+    component: PersonalInfo,
+  },
+  {
+    name: 'Notification',
+    component: Notification,
+  },
+  {
+    name: 'Language',
+    component: Language,
+  },
+  {
+    name: 'Login',
+    component: Login,
+  },
+  {
+    name: 'Verification',
+    component: Verification,
+  },
+  {
+    name: 'Notifications',
+    component: Notifications,
   },
 ];
 
@@ -63,7 +102,7 @@ const BottomTab = () => {
     <BottomTabNavigator.Navigator
       screenOptions={{headerShown: false}}
       tabBar={props => <MyTabBar {...props} />}>
-      {screens.slice(0, 5).map(screen => (
+      {bottom_tabs.map(screen => (
         <BottomTabNavigator.Screen
           key={screen.name}
           name={screen.name}
@@ -81,9 +120,11 @@ const BottomTab = () => {
 const Navigation = () => {
   return (
     <NavigationContainer ref={navigationRef}>
-      <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Navigator
+        screenOptions={{headerShown: false}}
+        initialRouteName="Login">
         <Stack.Screen name="BottomTab" component={BottomTab} />
-        {screens.slice(5).map(screen => (
+        {screens.map(screen => (
           <Stack.Screen
             key={screen.name}
             name={screen.name}

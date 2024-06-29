@@ -9,15 +9,20 @@ import {Platform} from 'react-native';
 interface MainHeaderProps {
   title: string;
   icons?: React.ReactNode | React.ReactNode[];
+  borderBottomWidth?: number;
 }
-const MainHeader: React.FC<MainHeaderProps> = ({title, icons}) => {
+const MainHeader: React.FC<MainHeaderProps> = ({
+  title,
+  icons,
+  borderBottomWidth = 0.3,
+}) => {
   const {theme} = useStyles();
   return (
     <View
       backgroundColor={theme.colors.background}
       alignItems="flex-start"
       justifyContent="flex-end"
-      style={{borderBottomWidth: 0.3}}
+      style={{borderBottomWidth: borderBottomWidth}}
       borderColor={theme.colors.bottomTabInactiveText}
       height={Platform.OS === 'ios' ? 110 : 90}>
       <View
@@ -41,7 +46,7 @@ const MainHeader: React.FC<MainHeaderProps> = ({title, icons}) => {
           <Text
             color={theme.colors.typography}
             mLeft={12}
-            size={FontSize.x18}
+            size={FontSize.x20}
             font={FONT.BOLD}>
             {title}
           </Text>

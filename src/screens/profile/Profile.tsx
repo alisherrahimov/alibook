@@ -1,4 +1,13 @@
-import {Header, Text, View, Image, Line, Switch, MenuButton} from '@components';
+import {
+  Header,
+  Text,
+  View,
+  Image,
+  Line,
+  Switch,
+  MenuButton,
+  Touchable,
+} from '@components';
 import {Colors, FontSize} from '@constants';
 import {FONT} from '@fonts';
 import {
@@ -30,29 +39,31 @@ const Profile = () => {
     <View flex={1} backgroundColor={theme.colors.background}>
       <Header title="Profile" />
       <ScrollView contentContainerStyle={{paddingHorizontal: 20}}>
-        <View
-          flexDirection="row"
-          justifyContent="space-between"
-          alignItems="center">
-          <View flexDirection="row" alignItems="center">
-            <Image
-              width={60}
-              height={60}
-              borderRadius={50}
-              source={{
-                uri: 'https://newprofilepic.photo-cdn.net//assets/images/article/profile.jpg?90af0c8',
-              }}
-            />
-            <Text
-              color={theme.colors.typography}
-              size={FontSize.x18}
-              font={FONT.BOLD}
-              mLeft={20}>
-              John Doe
-            </Text>
+        <Touchable onPress={() => navigateRoute('PersonalInfo')}>
+          <View
+            flexDirection="row"
+            justifyContent="space-between"
+            alignItems="center">
+            <View flexDirection="row" alignItems="center">
+              <Image
+                width={60}
+                height={60}
+                borderRadius={50}
+                source={{
+                  uri: 'https://newprofilepic.photo-cdn.net//assets/images/article/profile.jpg?90af0c8',
+                }}
+              />
+              <Text
+                color={theme.colors.typography}
+                size={FontSize.x18}
+                font={FONT.BOLD}
+                mLeft={20}>
+                John Doe
+              </Text>
+            </View>
+            <PenIcon color={theme.colors.typography} />
           </View>
-          <PenIcon color={theme.colors.typography} />
-        </View>
+        </Touchable>
         <Line marginVertical={15} width={'100%'} height={0.5} />
         <MenuButton
           onPress={() => navigateRoute('Payment')}
@@ -71,6 +82,7 @@ const Profile = () => {
           rightIcon={<RightRowIcon color={theme.colors.typography} />}
         />
         <MenuButton
+          onPress={() => navigateRoute('Notification')}
           icon={<RingIcon width={28} height={28} color={Colors.xff6e79} />}
           iconBackgroundColor={theme.colors.notificationIconBackground}
           title="Notifications"
@@ -93,6 +105,7 @@ const Profile = () => {
           rightIcon={<RightRowIcon color={theme.colors.typography} />}
         />
         <MenuButton
+          onPress={() => navigateRoute('Language')}
           icon={
             <LanguageFillIcon width={28} height={28} color={Colors.xf99a0f} />
           }

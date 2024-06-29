@@ -11,6 +11,7 @@ import {
   useStyles,
 } from 'react-native-unistyles';
 import {Colors} from '@constants';
+import {getStorege, setStorege} from '../../config/storage';
 
 interface SwitchProps {
   backgroundColor?: string;
@@ -28,8 +29,12 @@ const Switch: React.FC<SwitchProps> = ({
   width,
 }) => {
   const {styles} = useStyles(switchStyles);
-  const valueX = useSharedValue(0);
-  const [isEnabled, setIsEnabled] = React.useState(false);
+
+  const [isEnabled, setIsEnabled] = React.useState(() => {
+    const theme = getStorege('theme') ?? false;
+    return theme === 'dark' ? true : false;
+  });
+  const valueX = useSharedValue(isEnabled ? 27.5 : 0);
 
   const animatedStyle = useAnimatedStyle(() => {
     return {
@@ -40,6 +45,7 @@ const Switch: React.FC<SwitchProps> = ({
   const toggleSwitch = () => {
     valueX.value = isEnabled ? 0 : 27.5;
     setIsEnabled(previousState => !previousState);
+    setStorege('theme', isEnabled ? 'light' : 'dark');
     UnistylesRuntime.setTheme(isEnabled ? 'light' : 'dark');
   };
 

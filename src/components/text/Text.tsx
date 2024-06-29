@@ -2,6 +2,7 @@ import React, {PropsWithChildren} from 'react';
 import {DimensionValue, Text, TextStyle} from 'react-native';
 import {Colors, FontSize} from '@constants';
 import {FONT} from '@fonts';
+import {useStyles} from 'react-native-unistyles';
 
 interface TextProps extends PropsWithChildren {
   color?: string | Colors;
@@ -69,10 +70,11 @@ const TextX: React.FC<TextProps> = ({
   mV,
   font = FONT.MEDIUM,
 }) => {
+  const {theme} = useStyles();
   return (
     <Text
       style={{
-        color,
+        color: color ?? theme.colors.typography,
         marginLeft: mLeft,
         fontSize: size,
         fontWeight: weight,

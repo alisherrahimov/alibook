@@ -9,26 +9,25 @@ type HeaderProps = {
   buttons?: React.ReactNode | React.ReactNode[];
 };
 const Header: React.FC<HeaderProps> = ({title, buttons}) => {
-  const {theme} = useStyles(headerStyles);
   return (
     <View
       height={Platform.OS === 'ios' ? 110 : 90}
       alignItems="flex-start"
-      justifyContent="flex-end"
-      backgroundColor={theme.colors.background}>
+      justifyContent="flex-end">
       <View
         marginVertical={10}
         paddingHorizontal={20}
         width={'100%'}
         flexDirection="row"
+        alignItems="center"
         justifyContent="space-between">
-        <Text
-          color={theme.colors.typography}
-          size={FontSize.x22}
-          font={FONT.BOLD}>
+        <Text size={FontSize.x22} font={FONT.BOLD}>
           {title}
         </Text>
-        <View justifyContent="space-between" flexDirection="row">
+        <View
+          justifyContent="space-between"
+          alignItems="center"
+          flexDirection="row">
           {buttons}
         </View>
       </View>
@@ -37,11 +36,3 @@ const Header: React.FC<HeaderProps> = ({title, buttons}) => {
 };
 
 export default Header;
-
-const headerStyles = createStyleSheet(() => {
-  return {
-    flex: {
-      flex: 1,
-    },
-  };
-});

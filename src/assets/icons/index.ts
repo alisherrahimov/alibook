@@ -29,3 +29,4 @@ export {default as EyeFillIcon} from './EyeFill';
 export {default as HelpIcon} from './Help';
 export {default as InfoIcon} from './Info';
 export {default as LogOutIcon} from './LogOut';
+export {default as CameraIcon} from './Camera';

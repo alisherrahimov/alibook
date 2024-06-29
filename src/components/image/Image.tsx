@@ -1,9 +1,8 @@
 import {
   StyleSheet,
   Image as ImageX,
-  Text,
-  View,
   ImageSourcePropType,
+  ImageStyle,
 } from 'react-native';
 import React from 'react';
 interface ImageProps {
@@ -12,6 +11,7 @@ interface ImageProps {
   height?: number;
   borderRadius?: number;
   resizeMode?: 'cover' | 'contain' | 'stretch' | 'repeat' | 'center';
+  style?: ImageStyle;
 }
 const Image: React.FC<ImageProps> = ({
   source,
@@ -19,20 +19,22 @@ const Image: React.FC<ImageProps> = ({
   height,
   resizeMode,
   width,
+  style,
 }) => {
   return (
     <ImageX
       source={source}
-      style={{
-        width: width,
-        height: height,
-        borderRadius: borderRadius,
-        resizeMode: resizeMode,
-      }}
+      style={[
+        {
+          width: width,
+          height: height,
+          borderRadius: borderRadius,
+          resizeMode: resizeMode,
+        },
+        style,
+      ]}
     />
   );
 };
 
 export default Image;
-
-const styles = StyleSheet.create({});

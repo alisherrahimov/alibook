@@ -1,5 +1,5 @@
 import React from 'react';
-import {TextInput, ViewStyle} from 'react-native';
+import {DimensionValue, TextInput, ViewStyle} from 'react-native';
 interface InputProps {
   value?: string;
   placeholder?: string;
@@ -46,6 +46,13 @@ interface InputProps {
   alignItems?: 'center' | 'flex-start' | 'flex-end' | 'stretch';
   flexDirection?: 'row' | 'column';
   flexWrap?: 'wrap' | 'nowrap';
+  width?: DimensionValue | undefined;
+  height?: DimensionValue | undefined;
+  backgroundColor?: string;
+  size?: number;
+  font?: string;
+  color?: string;
+  placeholderTextColor?: string;
 }
 const Input: React.FC<InputProps> = ({
   value,
@@ -81,9 +88,17 @@ const Input: React.FC<InputProps> = ({
   flexDirection,
   flexWrap,
   style,
+  width,
+  height,
+  backgroundColor,
+  size,
+  font,
+  color,
+  placeholderTextColor,
 }) => {
   return (
     <TextInput
+      placeholderTextColor={placeholderTextColor}
       value={value}
       placeholder={placeholder}
       onChangeText={onChangeText}
@@ -118,6 +133,12 @@ const Input: React.FC<InputProps> = ({
           alignItems,
           flexDirection,
           flexWrap,
+          width,
+          height,
+          backgroundColor,
+          fontSize: size,
+          fontFamily: font,
+          color,
         },
         style,
       ]}

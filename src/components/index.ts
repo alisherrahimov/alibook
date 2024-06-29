@@ -11,3 +11,5 @@ export {default as MainHeader} from './header2/MainHeader';
 export {default as Line} from './line/Line';
 export {default as Switch} from './switch/Switch';
 export {default as MenuButton} from './profileButton/MenuButton';
+export {default as PurchaseCard} from './card2/PurchaseCard';
+export {default as FlatListItem} from './list/FlatListItem';
