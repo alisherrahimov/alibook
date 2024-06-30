@@ -1,7 +1,7 @@
 import React from 'react';
 import {createStyleSheet, useStyles} from 'react-native-unistyles';
 import {FlatListItem, Header, Text, Touchable, View} from '@components';
-import {NotificationIcon, RightRowIcon} from '@icons';
+import {NotificationIcon, RightIcon, RightRowIcon} from '@icons';
 import {navigate} from '@navigation';
 import {ScrollView} from 'react-native';
 
@@ -41,7 +41,7 @@ const Home = () => {
             onPress={() => {
               navigate('Notifications');
             }}>
-            <NotificationIcon />
+            <NotificationIcon color={theme.colors.typography} />
           </Touchable>
         }
       />
@@ -58,11 +58,18 @@ const Home = () => {
                 <Text size={FontSize.x20} mV={20} font={FONT.BOLD} mLeft={20}>
                   {item.categories_name}
                 </Text>
-                <Touchable marginRight={20}>
-                  <RightRowIcon color={Colors.orage} />
+                <Touchable
+                  onPress={() => {
+                    navigate('SeeAll', {
+                      categories_id: index,
+                      categories_name: item.categories_name,
+                    });
+                  }}
+                  marginRight={20}>
+                  <RightIcon width={26} height={26} color={Colors.orage} />
                 </Touchable>
               </View>
-              <FlatListItem categories_id={index} categories_name="sadasdas" />
+              <FlatListItem categories_id={index} />
             </View>
           );
         })}

@@ -35,4 +35,8 @@ export enum Colors {
   x1e1e31 = '#1e1e31',
   x2a241d = '#2a241d',
   x36383f = '#36383f',
+  x626162 = '#626162',
+  xefeeef = '#efeeef',
+  x747374 = '#747374',
+  xfef4e5 = '#fef4e5',
 }

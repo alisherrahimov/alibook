@@ -10,4 +10,5 @@ export enum FontSize {
   x24 = 24,
   x26 = 26,
   x28 = 28,
+  x30 = 30,
 }

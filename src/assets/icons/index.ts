@@ -30,3 +30,7 @@ export {default as HelpIcon} from './Help';
 export {default as InfoIcon} from './Info';
 export {default as LogOutIcon} from './LogOut';
 export {default as CameraIcon} from './Camera';
+export {default as RightIcon} from './Right';
+export {default as FilterIcon} from './Filter';
+export {default as DoubleRowIcon} from './DoubleRow';
+export {default as OneRowIcon} from './OneRow';

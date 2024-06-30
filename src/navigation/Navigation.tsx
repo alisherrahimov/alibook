@@ -3,6 +3,8 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {
+  AboutBook,
+  BookDetails,
   Discover,
   Home,
   Language,
@@ -13,8 +15,11 @@ import {
   PersonalInfo,
   Profile,
   Purchased,
+  ReviewBook,
+  SeeAll,
   Verification,
   Wishlist,
+  WriteReview,
 } from '@screens';
 import MyTabBar from './bottom/BottomTab';
 import {
@@ -94,6 +99,26 @@ const screens = [
   {
     name: 'Notifications',
     component: Notifications,
+  },
+  {
+    name: 'SeeAll',
+    component: SeeAll,
+  },
+  {
+    name: 'BookDetails',
+    component: BookDetails,
+  },
+  {
+    name: 'AboutBook',
+    component: AboutBook,
+  },
+  {
+    name: 'ReviewBook',
+    component: ReviewBook,
+  },
+  {
+    name: 'WriteReview',
+    component: WriteReview,
   },
 ];
 

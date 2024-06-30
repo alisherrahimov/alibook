@@ -10,3 +10,8 @@ export {default as Language} from './profile/Language';
 export {default as Login} from './auth/Login';
 export {default as Verification} from './auth/Verification';
 export {default as Notifications} from './home/Notifications';
+export {default as SeeAll} from './home/SeeAll';
+export {default as BookDetails} from './home/BookDetails';
+export {default as AboutBook} from './home/AboutBook';
+export {default as ReviewBook} from './home/ReviewBook';
+export {default as WriteReview} from './home/WriteReview';
