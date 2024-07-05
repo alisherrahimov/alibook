@@ -35,6 +35,9 @@ const style = StyleSheet.create({
   alignBaseline: {
     alignItems: 'baseline',
   },
+  flex: {
+    flex: 1,
+  },
 });
 
 export {style};

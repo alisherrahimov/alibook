@@ -1,4 +1,4 @@
-import {Header, PurchaseCard, Text, View} from '@components';
+import {Header, PurchaseCard, View} from '@components';
 import React from 'react';
 import {ScrollView} from 'react-native';
 import {useStyles} from 'react-native-unistyles';

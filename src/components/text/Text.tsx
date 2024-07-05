@@ -46,7 +46,9 @@ interface TextProps extends PropsWithChildren {
   pV?: DimensionValue | undefined;
   mH?: DimensionValue | undefined;
   mV?: DimensionValue | undefined;
-  font?: FONT;
+  font?: FONT.BOLD | FONT.MEDIUM | FONT.REGULAR | FONT.THIN;
+  onPress?: () => void;
+  textAlign?: 'auto' | 'left' | 'right' | 'center' | 'justify';
 }
 
 const TextX: React.FC<TextProps> = ({
@@ -69,10 +71,13 @@ const TextX: React.FC<TextProps> = ({
   mH,
   mV,
   font = FONT.MEDIUM,
+  onPress,
+  textAlign,
 }) => {
   const {theme} = useStyles();
   return (
     <Text
+      onPress={onPress}
       style={{
         color: color ?? theme.colors.typography,
         marginLeft: mLeft,
@@ -90,6 +95,7 @@ const TextX: React.FC<TextProps> = ({
         marginHorizontal: mH,
         marginVertical: mV,
         fontFamily: font,
+        textAlign: textAlign,
         ...style,
       }}>
       {children!.toString().length > 20 && cut

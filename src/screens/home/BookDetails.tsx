@@ -9,17 +9,44 @@ import {
 } from '@components';
 import {Colors, FontSize} from '@constants';
 import {FONT} from '@fonts';
-import {RightIcon, StarIcon} from '@icons';
+import {HeartIcon, RightIcon, ShareIcon, StarIcon} from '@icons';
 import {navigate} from '@navigation';
 import React from 'react';
-import {FlatList, ScrollView} from 'react-native';
+import {FlatList, ScrollView, Share} from 'react-native';
 import {createStyleSheet, useStyles} from 'react-native-unistyles';
 
 const BookDetails = () => {
   const {theme, styles} = useStyles(bookDetailsStyles);
   return (
     <View flex={1}>
-      <MainHeader title="Book name" borderBottomWidth={0} />
+      <MainHeader
+        title="Book name"
+        borderBottomWidth={0}
+        icons={
+          <View
+            width={'18%'}
+            justifyContent="space-between"
+            flexDirection="row">
+            <Touchable
+              width={30}
+              height={30}
+              alignItems="center"
+              justifyContent="center">
+              <HeartIcon color={theme.colors.typography} />
+            </Touchable>
+            <Touchable
+              onPress={() => {
+                Share.share({message: 'nima gap', url: 'niga ', title: 'asad'});
+              }}
+              width={30}
+              height={30}
+              alignItems="center"
+              justifyContent="center">
+              <ShareIcon color={theme.colors.typography} />
+            </Touchable>
+          </View>
+        }
+      />
 
       <ScrollView contentContainerStyle={styles.scroollView}>
         <View flex={1} flexDirection="row">
@@ -155,7 +182,7 @@ const BookDetails = () => {
           width={'100%'}
           height={40}
           borderRadius={16}>
-          <Text size={FontSize.x16} font={FONT.BOLD}>
+          <Text color={Colors.white} size={FontSize.x16} font={FONT.BOLD}>
             Buy 9.99 $
           </Text>
         </Touchable>

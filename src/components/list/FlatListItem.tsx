@@ -2,6 +2,7 @@ import {FlatList, Text, View} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import Card from '../card/Card';
 import {createStyleSheet, useStyles} from 'react-native-unistyles';
+import {BookService} from '@api';
 
 interface FlatListItemProps {
   categories_id: number;
@@ -11,20 +12,16 @@ const FlatListItem: React.FC<FlatListItemProps> = ({categories_id}) => {
   const {styles} = useStyles(flatStyles);
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     async function fetchData() {
-      setLoading(true);
-      const response = await fetch(
-        `https://jsonplaceholder.typicode.com/todos/${categories_id}`,
-      );
-      const json = await response.json();
-      console.log(json, 'json');
-      setData([json]);
-      setLoading(false);
+      const res = await BookService.getBooksByCategory(categories_id, page);
+      console.log(res.data.data);
+      setData(res.data.data || []);
     }
     fetchData();
-  }, [categories_id]);
+  }, [categories_id, page]);
 
   return (
     <>
@@ -35,14 +32,14 @@ const FlatListItem: React.FC<FlatListItemProps> = ({categories_id}) => {
           horizontal
           data={data}
           showsHorizontalScrollIndicator={false}
-          renderItem={({}) => {
+          renderItem={({item}) => {
             return (
               <View style={styles.container}>
                 <Card
                   image="https://images.pexels.com/photos/1770809/pexels-photo-1770809.jpeg?cs=srgb&dl=pexels-luisdalvan-1770809.jpg&fm=jpg"
                   price={120}
                   rate={5}
-                  title="asdsadsadsadasd"
+                  title={item?.title || ''}
                 />
               </View>
             );

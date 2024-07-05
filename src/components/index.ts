@@ -13,3 +13,6 @@ export {default as Switch} from './switch/Switch';
 export {default as MenuButton} from './profileButton/MenuButton';
 export {default as PurchaseCard} from './card2/PurchaseCard';
 export {default as FlatListItem} from './list/FlatListItem';
+export {default as Modal} from './modal/Modal';
+export {default as RefreshControl} from './refreshControl/RefreshControl';
+export {default as AnimatedView} from './animated/AnimatedView';

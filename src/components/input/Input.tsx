@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {forwardRef} from 'react';
 import {DimensionValue, TextInput, ViewStyle} from 'react-native';
 interface InputProps {
   value?: string;
@@ -54,95 +54,101 @@ interface InputProps {
   color?: string;
   placeholderTextColor?: string;
 }
-const Input: React.FC<InputProps> = ({
-  value,
-  placeholder,
-  onChangeText,
-  secureTextEntry,
-  keyboardType,
-  maxLength,
-  multiline,
-  numberOfLines,
-  editable,
-  autoCapitalize,
-  autoCorrect,
-  autoFocus,
-  blurOnSubmit,
-  clearButtonMode,
-  padding,
-  margin,
-  marginTop,
-  marginBottom,
-  marginLeft,
-  marginRight,
-  paddingTop,
-  paddingBottom,
-  paddingLeft,
-  paddingRight,
-  marginHorizontal,
-  marginVertical,
-  paddingHorizontal,
-  paddingVertical,
-  justifyContent,
-  alignItems,
-  flexDirection,
-  flexWrap,
-  style,
-  width,
-  height,
-  backgroundColor,
-  size,
-  font,
-  color,
-  placeholderTextColor,
-}) => {
-  return (
-    <TextInput
-      placeholderTextColor={placeholderTextColor}
-      value={value}
-      placeholder={placeholder}
-      onChangeText={onChangeText}
-      secureTextEntry={secureTextEntry}
-      keyboardType={keyboardType}
-      maxLength={maxLength}
-      multiline={multiline}
-      numberOfLines={numberOfLines}
-      editable={editable}
-      autoCapitalize={autoCapitalize}
-      autoCorrect={autoCorrect}
-      autoFocus={autoFocus}
-      blurOnSubmit={blurOnSubmit}
-      clearButtonMode={clearButtonMode}
-      style={[
-        {
-          padding,
-          margin,
-          marginTop,
-          marginBottom,
-          marginLeft,
-          marginRight,
-          paddingTop,
-          paddingBottom,
-          paddingLeft,
-          paddingRight,
-          marginHorizontal,
-          marginVertical,
-          paddingHorizontal,
-          paddingVertical,
-          justifyContent,
-          alignItems,
-          flexDirection,
-          flexWrap,
-          width,
-          height,
-          backgroundColor,
-          fontSize: size,
-          fontFamily: font,
-          color,
-        },
-        style,
-      ]}
-    />
-  );
-};
+const Input = forwardRef(
+  (
+    {
+      value,
+      placeholder,
+      onChangeText,
+      secureTextEntry,
+      keyboardType,
+      maxLength,
+      multiline,
+      numberOfLines,
+      editable,
+      autoCapitalize,
+      autoCorrect,
+      autoFocus,
+      blurOnSubmit,
+      clearButtonMode,
+      style,
+      padding,
+      margin,
+      marginTop,
+      marginBottom,
+      marginLeft,
+      marginRight,
+      paddingTop,
+      paddingBottom,
+      paddingLeft,
+      paddingRight,
+      marginHorizontal,
+      marginVertical,
+      paddingHorizontal,
+      paddingVertical,
+      justifyContent,
+      alignItems,
+      flexDirection,
+      flexWrap,
+      width,
+      height,
+      backgroundColor,
+      size,
+      font,
+      color,
+      placeholderTextColor,
+    }: InputProps,
+    ref: React.Ref<TextInput>,
+  ) => {
+    return (
+      <TextInput
+        ref={ref}
+        placeholderTextColor={placeholderTextColor}
+        value={value}
+        placeholder={placeholder}
+        onChangeText={onChangeText}
+        secureTextEntry={secureTextEntry}
+        keyboardType={keyboardType}
+        maxLength={maxLength}
+        multiline={multiline}
+        numberOfLines={numberOfLines}
+        editable={editable}
+        autoCapitalize={autoCapitalize}
+        autoCorrect={autoCorrect}
+        autoFocus={autoFocus}
+        blurOnSubmit={blurOnSubmit}
+        clearButtonMode={clearButtonMode}
+        style={[
+          {
+            padding,
+            margin,
+            marginTop,
+            marginBottom,
+            marginLeft,
+            marginRight,
+            paddingTop,
+            paddingBottom,
+            paddingLeft,
+            paddingRight,
+            marginHorizontal,
+            marginVertical,
+            paddingHorizontal,
+            paddingVertical,
+            justifyContent,
+            alignItems,
+            flexDirection,
+            flexWrap,
+            width,
+            height,
+            backgroundColor,
+            fontSize: size,
+            fontFamily: font,
+            color,
+          },
+          style,
+        ]}
+      />
+    );
+  },
+);
 export default Input;

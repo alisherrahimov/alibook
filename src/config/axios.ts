@@ -1,7 +1,7 @@
 import axios from 'axios';
 import {getStorege, setStorege} from './storage';
 
-const MAIN_URL = 'https://jsonplaceholder.typicode.com';
+const MAIN_URL = 'http://localhost:8080/api/';
 
 const api = axios.create({
   baseURL: MAIN_URL,

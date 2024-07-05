@@ -34,3 +34,8 @@ export {default as RightIcon} from './Right';
 export {default as FilterIcon} from './Filter';
 export {default as DoubleRowIcon} from './DoubleRow';
 export {default as OneRowIcon} from './OneRow';
+export {default as HeartIcon} from './Heart';
+export {default as HeartFillIcon} from './HeartFill';
+export {default as ShareIcon} from './Share';
+export {default as XIcon} from './X';
+export {default as SelectIcon} from './Select';

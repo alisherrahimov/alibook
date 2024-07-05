@@ -3,28 +3,31 @@ import {
   Input,
   Line,
   MainHeader,
+  Modal,
   Text,
   Touchable,
-  TouchableWithOutKeyBoard,
   View,
 } from '@components';
-import {Colors, FontSize} from '@constants';
+import {Colors, FontSize, WIDTH} from '@constants';
 import {FONT} from '@fonts';
-import {StarIcon} from '@icons';
-import {navigate} from '@navigation';
+
+import {navigationRef} from '@navigation';
 import React from 'react';
 import {KeyboardAvoidingView} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
+import {Skottie} from 'react-native-skottie';
 import {createStyleSheet, useStyles} from 'react-native-unistyles';
+import {ModalRef} from '../../components/modal/Modal';
 
 const WriteReview = () => {
+  const modalRef = React.useRef<ModalRef>(null);
   const {styles, theme} = useStyles(bookDetailsStyles);
   return (
     <View flex={1}>
-      <TouchableWithOutKeyBoard>
-        <KeyboardAvoidingView style={{flex: 1}} behavior="position">
-          <MainHeader title="" borderBottomWidth={0} />
-          <ScrollView contentContainerStyle={styles.scroollView}>
+      <KeyboardAvoidingView behavior="padding" style={{flex: 1}}>
+        <MainHeader title="" borderBottomWidth={0} />
+        <ScrollView contentContainerStyle={styles.scroollView}>
+          <>
             <View flex={1} flexDirection="row">
               <Image
                 source={{
@@ -92,38 +95,76 @@ const WriteReview = () => {
               placeholder="Write your review here"
               style={styles.input}
             />
-          </ScrollView>
-          <View
-            paddingHorizontal={20}
-            bottom={0}
-            marginVertical={20}
-            justifyContent="space-between"
-            flexDirection="row">
-            <Touchable
-              backgroundColor={Colors.xfef4e5}
-              borderRadius={30}
-              width={'48%'}
-              height={40}
-              alignItems="center"
-              justifyContent="center">
-              <Text color={Colors.orage} size={FontSize.x16} font={FONT.BOLD}>
-                Cancel
-              </Text>
-            </Touchable>
-            <Touchable
-              backgroundColor={Colors.orage}
-              borderRadius={30}
-              width={'48%'}
-              height={40}
-              alignItems="center"
-              justifyContent="center">
-              <Text color={Colors.white} size={FontSize.x16} font={FONT.BOLD}>
-                Submit
-              </Text>
-            </Touchable>
-          </View>
-        </KeyboardAvoidingView>
-      </TouchableWithOutKeyBoard>
+          </>
+        </ScrollView>
+        <View
+          paddingHorizontal={20}
+          bottom={0}
+          position="absolute"
+          marginVertical={20}
+          justifyContent="space-between"
+          flexDirection="row">
+          <Touchable
+            onPress={() => navigationRef.goBack()}
+            backgroundColor={Colors.xfef4e5}
+            borderRadius={30}
+            width={'48%'}
+            height={40}
+            alignItems="center"
+            justifyContent="center">
+            <Text color={Colors.orage} size={FontSize.x16} font={FONT.BOLD}>
+              Cancel
+            </Text>
+          </Touchable>
+          <Touchable
+            onPress={() => {
+              modalRef.current?.show();
+            }}
+            backgroundColor={Colors.orage}
+            borderRadius={30}
+            width={'48%'}
+            height={40}
+            alignItems="center"
+            justifyContent="center">
+            <Text color={Colors.white} size={FontSize.x16} font={FONT.BOLD}>
+              Submit
+            </Text>
+          </Touchable>
+        </View>
+      </KeyboardAvoidingView>
+      <Modal ref={modalRef}>
+        <View borderRadius={30} marginVertical={20} alignItems="center">
+          <Skottie
+            style={styles.lottie}
+            autoPlay
+            source={require('../../assets/lotties/4agY6AdBBY.json')}
+          />
+        </View>
+        <View alignItems="center">
+          <Text color={Colors.orage} size={FontSize.x20} font={FONT.BOLD}>
+            Submitted Succussfully
+          </Text>
+          <Text size={FontSize.x14} mV={20} textAlign="center">
+            Your request has been submitted successfully. We will get back to
+            you soon.
+          </Text>
+          <Touchable
+            onPress={() => {
+              modalRef.current?.hide();
+            }}
+            marginTop={10}
+            width={'80%'}
+            backgroundColor={Colors.orage}
+            alignItems="center"
+            borderRadius={50}
+            height={60}
+            justifyContent="center">
+            <Text font={FONT.BOLD} color={Colors.white} size={FontSize.x18}>
+              OK
+            </Text>
+          </Touchable>
+        </View>
+      </Modal>
     </View>
   );
 };
@@ -134,6 +175,10 @@ const bookDetailsStyles = createStyleSheet(() => ({
   scroollView: {
     paddingHorizontal: 20,
     paddingVertical: 20,
+  },
+  lottie: {
+    width: WIDTH / 2 - 30,
+    height: WIDTH / 2 - 30,
   },
   input: {
     borderWidth: 1,

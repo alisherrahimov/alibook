@@ -1,41 +1,38 @@
-import React from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import {createStyleSheet, useStyles} from 'react-native-unistyles';
 import {FlatListItem, Header, Text, Touchable, View} from '@components';
-import {NotificationIcon, RightIcon, RightRowIcon} from '@icons';
+import {NotificationIcon, RightIcon} from '@icons';
 import {navigate} from '@navigation';
-import {ScrollView} from 'react-native';
+import {RefreshControl, ScrollView} from 'react-native';
 
 import {FONT} from '@fonts';
 import {Colors, FontSize} from '@constants';
-const arr = [
-  {
-    categories_id: 1,
-    categories_name: 'Classic',
-  },
-  {
-    categories_id: 2,
-    categories_name: 'Modern',
-  },
-  {
-    categories_id: 3,
-    categories_name: 'Vintage',
-  },
-  {
-    categories_id: 4,
-    categories_name: 'Retro',
-  },
-  {
-    categories_id: 5,
-    categories_name: 'Contemporary',
-  },
-];
+import {BookService} from '@api';
+
 const Home = () => {
   const {theme, styles} = useStyles(homeStyles);
+  const [categories, setCategories] = useState([]);
+  const [refreshing, setRefreshing] = useState(false);
+
+  const onGetCategories = useCallback(async () => {
+    if (categories.length !== 0) {
+      setRefreshing(true);
+    }
+    const response = await BookService.getCategories();
+    setCategories(response.data.data);
+    if (categories.length !== 0) {
+      setRefreshing(false);
+    }
+  }, [categories.length]);
+
+  useEffect(() => {
+    onGetCategories();
+  }, []);
 
   return (
     <View flex={1}>
       <Header
-        title="Header"
+        title="ALIBOOK"
         buttons={
           <Touchable
             onPress={() => {
@@ -46,9 +43,12 @@ const Home = () => {
         }
       />
       <ScrollView
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onGetCategories} />
+        }
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.container}>
-        {arr.map((item, index) => {
+        {categories.map((item, index) => {
           return (
             <View key={index}>
               <View
@@ -56,20 +56,20 @@ const Home = () => {
                 justifyContent="space-between"
                 flexDirection="row">
                 <Text size={FontSize.x20} mV={20} font={FONT.BOLD} mLeft={20}>
-                  {item.categories_name}
+                  {item?.name}
                 </Text>
                 <Touchable
                   onPress={() => {
                     navigate('SeeAll', {
-                      categories_id: index,
-                      categories_name: item.categories_name,
+                      categories_id: item.id,
+                      categories_name: item?.name,
                     });
                   }}
                   marginRight={20}>
                   <RightIcon width={26} height={26} color={Colors.orage} />
                 </Touchable>
               </View>
-              <FlatListItem categories_id={index} />
+              <FlatListItem categories_id={item?.id} />
             </View>
           );
         })}

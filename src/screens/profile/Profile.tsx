@@ -140,7 +140,7 @@ const Profile = () => {
         <MenuButton
           icon={<LogOutIcon width={28} height={28} color={Colors.xff6e79} />}
           iconBackgroundColor={theme.colors.notificationIconBackground}
-          title="Dark Mode"
+          title="Log Out"
           rightIcon={<></>}
         />
       </ScrollView>

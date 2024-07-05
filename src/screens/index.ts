@@ -15,3 +15,5 @@ export {default as BookDetails} from './home/BookDetails';
 export {default as AboutBook} from './home/AboutBook';
 export {default as ReviewBook} from './home/ReviewBook';
 export {default as WriteReview} from './home/WriteReview';
+export {default as SearchBook} from './discover/SearchBook';
+export {default as AskInfo} from './auth/AskInfo';

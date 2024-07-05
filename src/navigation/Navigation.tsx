@@ -4,6 +4,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {
   AboutBook,
+  AskInfo,
   BookDetails,
   Discover,
   Home,
@@ -16,6 +17,7 @@ import {
   Profile,
   Purchased,
   ReviewBook,
+  SearchBook,
   SeeAll,
   Verification,
   Wishlist,
@@ -120,6 +122,14 @@ const screens = [
     name: 'WriteReview',
     component: WriteReview,
   },
+  {
+    name: 'SearchBook',
+    component: SearchBook,
+  },
+  {
+    name: 'AskInfo',
+    component: AskInfo,
+  },
 ];
 
 const BottomTab = () => {
@@ -147,7 +157,7 @@ const Navigation = () => {
     <NavigationContainer ref={navigationRef}>
       <Stack.Navigator
         screenOptions={{headerShown: false}}
-        initialRouteName="Login">
+        initialRouteName="AskInfo">
         <Stack.Screen name="BottomTab" component={BottomTab} />
         {screens.map(screen => (
           <Stack.Screen

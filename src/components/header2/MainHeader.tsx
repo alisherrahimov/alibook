@@ -14,7 +14,7 @@ interface MainHeaderProps {
 const MainHeader: React.FC<MainHeaderProps> = ({
   title,
   icons,
-  borderBottomWidth = 0.3,
+  borderBottomWidth = 0,
 }) => {
   const {theme} = useStyles();
   return (
