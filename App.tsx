@@ -10,6 +10,7 @@ import {
   useStyles,
 } from 'react-native-unistyles';
 import {getStorege} from './src/config/storage';
+
 StatusBar.setBarStyle('default');
 if (Platform.OS === 'android') {
   StatusBar.setBackgroundColor('rgba(0,0,0,0)');

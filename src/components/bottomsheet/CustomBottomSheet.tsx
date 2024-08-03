@@ -1,4 +1,3 @@
-import {Text, View} from 'react-native';
 import React, {useCallback, useImperativeHandle, useMemo, useRef} from 'react';
 import BottomSheet, {BottomSheetView} from '@gorhom/bottom-sheet';
 import {createStyleSheet, useStyles} from 'react-native-unistyles';
@@ -7,7 +6,7 @@ interface SettingsSheetProps extends React.PropsWithChildren<{}> {
   ref: any;
 }
 
-const SettingsSheet: React.FC<SettingsSheetProps> = React.forwardRef(
+const CustomBottomSheet: React.FC<SettingsSheetProps> = React.forwardRef(
   (props, ref) => {
     const {styles} = useStyles(styless);
     // ref
@@ -44,7 +43,7 @@ const SettingsSheet: React.FC<SettingsSheetProps> = React.forwardRef(
   },
 );
 
-export default SettingsSheet;
+export default CustomBottomSheet;
 
 const styless = createStyleSheet(theme => {
   return {

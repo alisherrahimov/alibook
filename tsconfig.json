@@ -11,7 +11,8 @@
       "@navigation": ["./src/navigation/index.ts"],
       "@screens": ["./src/screens/index.ts"],
       "@fonts": ["./src/assets/fonts/index.ts"],
-      "@api": ["./src/api/index.ts"]
-    }
+      "@store": ["./src/store/index.ts"]
+    },
+    "experimentalDecorators": true
   }
 }

@@ -2,7 +2,6 @@ import {FlatList, Text, View} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import Card from '../card/Card';
 import {createStyleSheet, useStyles} from 'react-native-unistyles';
-import {BookService} from '@api';
 
 interface FlatListItemProps {
   categories_id: number;
@@ -14,14 +13,7 @@ const FlatListItem: React.FC<FlatListItemProps> = ({categories_id}) => {
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
 
-  useEffect(() => {
-    async function fetchData() {
-      const res = await BookService.getBooksByCategory(categories_id, page);
-      console.log(res.data.data);
-      setData(res.data.data || []);
-    }
-    fetchData();
-  }, [categories_id, page]);
+  useEffect(() => {}, [categories_id, page]);
 
   return (
     <>

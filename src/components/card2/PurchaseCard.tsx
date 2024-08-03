@@ -4,10 +4,16 @@ import {StarIcon, ThreeDotIcon} from '@icons';
 import {FONT} from '@fonts';
 import {FontSize} from '@constants';
 import {useStyles} from 'react-native-unistyles';
+import {navigate} from '@navigation';
 const PurchaseCard: React.FC = () => {
   const {theme} = useStyles();
   return (
-    <Touchable marginVertical={10} flexDirection="row">
+    <Touchable
+      onPress={() => {
+        navigate('BookDetails');
+      }}
+      marginVertical={10}
+      flexDirection="row">
       <Image
         width={100}
         height={120}

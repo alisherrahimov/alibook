@@ -1,3 +1,4 @@
+import {authApiService} from '@store';
 import {
   Input,
   Text,
@@ -8,14 +9,27 @@ import {
 import {Colors, FontSize} from '@constants';
 import {FONT} from '@fonts';
 import {navigate} from '@navigation';
-import React, {useState} from 'react';
+import {observer} from 'mobx-react-lite';
+import React, {useCallback, useState} from 'react';
 import {KeyboardAvoidingView} from 'react-native';
 
 import {createStyleSheet, useStyles} from 'react-native-unistyles';
 
-const Login = () => {
+const Login = observer(() => {
   const {theme, styles} = useStyles(loginStyles);
   const [phone, setPhone] = useState<string>('');
+
+  const onLoginAction = useCallback(async () => {
+    const res = await authApiService.login(Number(phone.replace(/\s/g, '')));
+    if (res.success) {
+      console.log('res', res);
+      navigate('Verification');
+    } else {
+      navigate('Verification');
+
+      console.log('error', res);
+    }
+  }, [phone]);
 
   return (
     <View flex={1}>
@@ -54,9 +68,7 @@ const Login = () => {
           </View>
           <View flex={1} justifyContent="flex-end" padding={20}>
             <Touchable
-              onPress={() => {
-                navigate('Verification');
-              }}
+              onPress={onLoginAction}
               borderRadius={16}
               backgroundColor={Colors.orage}
               height={60}
@@ -72,7 +84,7 @@ const Login = () => {
       </TouchableWithOutKeyBoard>
     </View>
   );
-};
+});
 // 998 99 964 24 12 like this
 const formatPhoneNumber = (value: string) => {
   let cleaned = ('' + value).replace(/\D/g, '');

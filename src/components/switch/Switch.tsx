@@ -1,5 +1,5 @@
-import React, {forwardRef, useImperativeHandle, useRef} from 'react';
-import {View, Touchable} from '@components';
+import React from 'react';
+import {Touchable} from '@components';
 import Animated, {
   useAnimatedStyle,
   useSharedValue,

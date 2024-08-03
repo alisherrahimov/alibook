@@ -17,3 +17,5 @@ export {default as ReviewBook} from './home/ReviewBook';
 export {default as WriteReview} from './home/WriteReview';
 export {default as SearchBook} from './discover/SearchBook';
 export {default as AskInfo} from './auth/AskInfo';
+export {default as Welcome} from './auth/Welcome';
+export {default as Genres} from './home/Genres';

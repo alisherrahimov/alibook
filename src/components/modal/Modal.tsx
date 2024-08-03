@@ -9,35 +9,45 @@ export interface ModalRef {
   visible: boolean;
 }
 
-const Modal = React.forwardRef((props: any, ref: React.Ref<ModalRef>) => {
-  const [visible, setVisible] = React.useState(false);
+interface ModalProps extends React.PropsWithChildren<{}> {
+  height?: number;
+}
 
-  useImperativeHandle(ref, () => ({
-    show: () => setVisible(true),
-    hide: () => setVisible(false),
-    visible,
-  }));
+const Modal = React.forwardRef(
+  (props: ModalProps, ref: React.Ref<ModalRef>) => {
+    const [visible, setVisible] = React.useState(false);
 
-  return (
-    <Modall animationType="fade" transparent={true} visible={visible}>
-      <View flex={1} backgroundColor={'rgba(0,0,0,0.5)'}>
+    useImperativeHandle(ref, () => ({
+      show: () => setVisible(true),
+      hide: () => setVisible(false),
+      visible,
+    }));
+
+    return (
+      <Modall animationType="fade" transparent={true} visible={visible}>
         <View
-          padding={25}
-          zIndex={1000}
-          opacity={1}
-          overflow="visible"
-          elevation={10}
-          width={WIDTH - 40}
-          borderRadius={30}
-          position="absolute"
-          top={HEIGHT / 2 - 220}
-          left={WIDTH / 40 + 10}
-          height={HEIGHT / 2}>
-          {props.children}
+          flex={1}
+          justifyContent="center"
+          alignItems="center"
+          backgroundColor={'rgba(0,0,0,0.5)'}>
+          <View
+            padding={25}
+            zIndex={1000}
+            opacity={1}
+            overflow="visible"
+            elevation={10}
+            width={WIDTH - 40}
+            borderRadius={30}
+            position="absolute"
+            top={HEIGHT / 2 - (props.height ?? HEIGHT / 2) / 2}
+            left={WIDTH / 40 + 10}
+            height={props.height ?? HEIGHT / 2}>
+            {props.children}
+          </View>
         </View>
-      </View>
-    </Modall>
-  );
-});
+      </Modall>
+    );
+  },
+);
 
 export default Modal;

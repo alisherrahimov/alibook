@@ -1,4 +1,4 @@
-export {default as BottomSheet} from './bottomsheet/Settings';
+export {default as BottomSheet} from './bottomsheet/CustomBottomSheet';
 export {default as View} from './view/View';
 export {default as Touchable} from './button/Touchable';
 export {default as Text} from './text/Text';

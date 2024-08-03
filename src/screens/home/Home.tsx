@@ -7,23 +7,13 @@ import {RefreshControl, ScrollView} from 'react-native';
 
 import {FONT} from '@fonts';
 import {Colors, FontSize} from '@constants';
-import {BookService} from '@api';
 
 const Home = () => {
   const {theme, styles} = useStyles(homeStyles);
   const [categories, setCategories] = useState([]);
   const [refreshing, setRefreshing] = useState(false);
 
-  const onGetCategories = useCallback(async () => {
-    if (categories.length !== 0) {
-      setRefreshing(true);
-    }
-    const response = await BookService.getCategories();
-    setCategories(response.data.data);
-    if (categories.length !== 0) {
-      setRefreshing(false);
-    }
-  }, [categories.length]);
+  const onGetCategories = useCallback(async () => {}, []);
 
   useEffect(() => {
     onGetCategories();
@@ -69,6 +59,7 @@ const Home = () => {
                   <RightIcon width={26} height={26} color={Colors.orage} />
                 </Touchable>
               </View>
+              {index === 0 ? <Text>Test</Text> : null}
               <FlatListItem categories_id={item?.id} />
             </View>
           );

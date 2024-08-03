@@ -14,10 +14,12 @@ module.exports = {
           '@navigation': './src/navigation',
           '@screens': './src/screens/',
           '@fonts': './src/assets/fonts',
-          '@api': './src/api',
+          '@store': './src/store',
         },
       },
     ],
     'react-native-reanimated/plugin',
+    ['@babel/plugin-proposal-decorators', {version: '2023-11'}],
+    '@babel/plugin-transform-class-static-block',
   ],
 };

@@ -7,6 +7,7 @@ import {
   Switch,
   MenuButton,
   Touchable,
+  Modal,
 } from '@components';
 import {Colors, FontSize} from '@constants';
 import {FONT} from '@fonts';
@@ -28,13 +29,16 @@ import React from 'react';
 import {ScrollView} from 'react-native';
 import {useStyles} from 'react-native-unistyles';
 import {navigate} from '../../navigation/navigationRef';
+import {ModalRef} from '../../components/modal/Modal';
 
 const Profile = () => {
   const {theme} = useStyles();
+  const modalRef = React.useRef<ModalRef>(null);
 
   const navigateRoute = (screen: string) => {
     navigate(screen);
   };
+
   return (
     <View flex={1} backgroundColor={theme.colors.background}>
       <Header title="Profile" />
@@ -138,12 +142,61 @@ const Profile = () => {
           rightIcon={<RightRowIcon color={theme.colors.typography} />}
         />
         <MenuButton
+          onPress={() => {
+            modalRef.current?.show();
+          }}
           icon={<LogOutIcon width={28} height={28} color={Colors.xff6e79} />}
           iconBackgroundColor={theme.colors.notificationIconBackground}
           title="Log Out"
           rightIcon={<></>}
         />
       </ScrollView>
+      <Modal height={200} ref={modalRef}>
+        <Text
+          color={Colors.xff6e79}
+          textAlign="center"
+          size={FontSize.x28}
+          font={FONT.BOLD}>
+          Log Out
+        </Text>
+        <Text pV={10} textAlign="center" size={FontSize.x16} font={FONT.BOLD}>
+          Are you sure you want to log out?
+        </Text>
+        <View justifyContent="flex-end" flex={1}>
+          <View
+            marginTop={10}
+            flexDirection="row"
+            justifyContent="space-between">
+            <Touchable
+              onPress={() => modalRef.current?.hide()}
+              alignItems="center"
+              justifyContent="center"
+              width={'48%'}
+              backgroundColor={Colors.xfff8eb}
+              borderRadius={20}
+              height={40}>
+              <Text font={FONT.BOLD} color={Colors.xf59202}>
+                Cancel
+              </Text>
+            </Touchable>
+            <Touchable
+              onPress={() => {
+                modalRef.current?.hide();
+                navigateRoute('Login');
+              }}
+              backgroundColor={Colors.xf59202}
+              borderRadius={20}
+              alignItems="center"
+              justifyContent="center"
+              width={'48%'}
+              height={40}>
+              <Text font={FONT.BOLD} color={Colors.white}>
+                Yes, Logout
+              </Text>
+            </Touchable>
+          </View>
+        </View>
+      </Modal>
     </View>
   );
 };

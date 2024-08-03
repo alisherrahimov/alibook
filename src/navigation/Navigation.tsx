@@ -7,6 +7,7 @@ import {
   AskInfo,
   BookDetails,
   Discover,
+  Genres,
   Home,
   Language,
   Login,
@@ -20,6 +21,7 @@ import {
   SearchBook,
   SeeAll,
   Verification,
+  Welcome,
   Wishlist,
   WriteReview,
 } from '@screens';
@@ -130,6 +132,14 @@ const screens = [
     name: 'AskInfo',
     component: AskInfo,
   },
+  {
+    name: 'Welcome',
+    component: Welcome,
+  },
+  {
+    name: 'Genres',
+    component: Genres,
+  },
 ];
 
 const BottomTab = () => {
@@ -157,7 +167,7 @@ const Navigation = () => {
     <NavigationContainer ref={navigationRef}>
       <Stack.Navigator
         screenOptions={{headerShown: false}}
-        initialRouteName="AskInfo">
+        initialRouteName="Login">
         <Stack.Screen name="BottomTab" component={BottomTab} />
         {screens.map(screen => (
           <Stack.Screen
